@@ -46,25 +46,23 @@ public class MainActivity extends AppCompatActivity {
 
         //mArticles = (RecyclerView) findViewById(R.id.listview);
 
+
+        // Firebase:
+        // www.firebase.com
+
+        // Quick start with Firebase 2 minute YouTube tutorial:
+        // https://www.youtube.com/watch?v=cab-p7pJBDw
+
+        // Replace with your Firebase project URL:
+        // https://example-your-firebase-project,firebaseio.com/Articles
+
+        // The JSON structure for this firebase project is linked bellow:
+        // The root of the Firebase project:
+        // https://drive.google.com/open?id=0B9B86M6T4uiaNkk0YVQ3dGwzajA
+        // Download the JSON file and import it to your Firebase project at root level.
         mRef = new Firebase("https://5-random-bits.firebaseio.com/Articles");
 
-//        LinearLayoutManager manager = new LinearLayoutManager(this);
-//        manager.setReverseLayout(false);
-//
-//        mArticles.setHasFixedSize(false);
-//        mArticles.setLayoutManager(manager);
-//
-//        mRecycleViewAdapter = new FirebaseRecyclerAdapter<Articles, ArticlesHolder>(
-//                Articles.class, R.layout.two_line_list_item, ArticlesHolder.class, mRef) {
-//            @Override
-//            public void populateViewHolder(ArticlesHolder chatView, Articles chat, int position) {
-//                chatView.setTitle(chat.getTitle());
-//                chatView.setBody(chat.getBody());
-//
-//            }
-//        };
-//
-//        mArticles.setAdapter(mRecycleViewAdapter);
+
 
         final TextView title = (TextView) findViewById(R.id.text);
         TextView body = (TextView) findViewById(R.id.text2);
@@ -82,14 +80,24 @@ public class MainActivity extends AppCompatActivity {
 
                     GlideDrawableImageViewTarget imageViewTarget = new GlideDrawableImageViewTarget(pic);
 
-
-
                     Articles article = articleSnapshot.getValue(Articles.class);
-                    Log.d("firebase", article.getImageUrl());
 
                     String mTitle =  (String) article.getTitle();
                     System.out.println(mTitle);
                     title.setText(mTitle);
+
+                    // Very simple example.
+                    // A text and an ImageView using Glide.
+                    // Data from Firebase is fetched and loaded.
+                    // The Data is extracted with the help of a class and Jackson parsing.
+
+                    // Excellent explanation of how you can use classes and Firebase to extract data by Frank van Puffelen:
+                    // http://stackoverflow.com/questions/32108969/why-do-i-get-failed-to-bounce-to-type-when-i-turn-json-from-firebase-into-java
+
+                    // The names must be identical.
+                    // The root of the Firebase project:
+                    // https://drive.google.com/open?id=0B9B86M6T4uiaNkk0YVQ3dGwzajA
+                    // Download the JSON file and import it to your Firebase project at root level.
 
                     Glide
                             .with(mContext)
@@ -109,9 +117,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        // Setup our view and list adapter. Ensure it scrolls to the bottom as data changes
-        //final ListView listView = getListView();
 
     }
 
