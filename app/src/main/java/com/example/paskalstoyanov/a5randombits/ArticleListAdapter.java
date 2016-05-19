@@ -7,7 +7,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.firebase.client.Query;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 /**
  * Created by paskalstoyanov on 19/04/16.
@@ -16,9 +18,10 @@ public class ArticleListAdapter extends FirebaseListAdapter<Articles> {
 
     Context mContext;
 
-    public ArticleListAdapter(Query ref, Activity activity, int layout)
+    public ArticleListAdapter(Query mRef, Activity activity, int layout)
     {
-        super(ref, Articles.class,layout, activity);
+        //super(ref, Articles.class,layout, activity);
+        super(mRef, Articles.class,layout, activity);
         mContext = activity;
     }
 

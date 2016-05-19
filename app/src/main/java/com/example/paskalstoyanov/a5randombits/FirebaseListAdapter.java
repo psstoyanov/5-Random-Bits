@@ -7,11 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.Query;
-
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -133,9 +132,10 @@ public abstract class FirebaseListAdapter<T> extends BaseAdapter {
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                Log.e("FirebaseListAdapter", "Listen was cancelled, no more updates will occur");
+            public void onCancelled(DatabaseError databaseError) {
+
             }
+
 
         });
     }

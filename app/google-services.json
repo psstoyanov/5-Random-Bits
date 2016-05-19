@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "663663200011",
+    "firebase_url": "https://5-random-bits.firebaseio.com",
+    "project_id": "firebase-random-bits",
+    "storage_bucket": "firebase-random-bits.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663663200011:android:51f76e49d3558669",
+        "android_client_info": {
+          "package_name": "com.example.paskalstoyanov.a5randombits"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663663200011-ts738o93anlra18rtf6pon4ge2mvs68d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNAQLuWdsCpBcXn0igZsqRsM4WAr1JmeY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
